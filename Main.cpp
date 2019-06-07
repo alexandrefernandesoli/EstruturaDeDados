@@ -1,13 +1,16 @@
 #include <iostream>
 
+
+using namespace std;
+
 int main(int argc, char *argv[]){
     
+	char* texto[argc];
+	for(int i = 1; i < argc; i++){
+		texto[i] = argv[i];
 
-    for(int i = 0; i < argc; i++){
-        std::cout << argv[i] << " ";
-    }
-
-    std::cout << "\n";
+		cout << texto[i] << "\n";
+	}
 
     return 0;
 }
