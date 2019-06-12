@@ -1,4 +1,10 @@
+#include <string>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
 class KMP{
-	void KMPSearch(char* pat, char* txt);
-	void computeLPSArray(char* pat, int M, int* lps);	
+	public:
+		void prefix(string, int[]);
+		bool kmp(string, string, int[]);
 };
