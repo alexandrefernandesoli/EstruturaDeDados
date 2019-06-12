@@ -1,3 +1,0 @@
-Good programming is not learned from
-generalities, but by seeing how significant
-programs can be made clean, easy to.
