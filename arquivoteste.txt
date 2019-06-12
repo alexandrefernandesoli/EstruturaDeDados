@@ -1,4 +1,5 @@
-Testando Testando
-Testando
-Testando
-Testando
+3
+texto1.txt
+texto2.txt
+texto3.txt
+palavras.txt
