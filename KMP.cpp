@@ -54,7 +54,6 @@ KMP::verificaPalavra(ofstream& arquivoSaida){
                             c = ::tolower(c);
                         });
                         int aux[line.length()];
-                        cout << line.length() << ' ' << line << endl;
                         prefix(palavra, aux);
                         if(kmp(line, palavra, aux)){
                             linhaParaEscrever = linhaParaEscrever + ' ' +  to_string(arquivo.first) + ',' + to_string(lineCount);
@@ -71,8 +70,10 @@ KMP::verificaPalavra(ofstream& arquivoSaida){
     for(int i = 0; i < linhasParaEscrever.size(); i++){
         if(i < linhasParaEscrever.size() - 1){
             arquivoSaida << linhasParaEscrever[i] << endl;
+            cout << linhasParaEscrever[i] << endl;
         }else{
             arquivoSaida << linhasParaEscrever[i];
+            cout << linhasParaEscrever[i];
         }
     }
 }
@@ -87,10 +88,6 @@ KMP::salvaNoMap(vector<string> arquivos){
             i++;
         }
     }
-    for (auto itr = arquivosMap.begin(); itr != arquivosMap.end(); itr++) { 
-        cout << itr->first 
-             << '\t' << itr->second << '\n'; 
-    } 
 }
 
 void
@@ -150,9 +147,8 @@ KMP::stringSplit(string arquivoDePalavras){
         getline(arquivo, linha);
         stringstream ss(linha);
 
-        while(std::getline(ss, palavra, ' ')) {
+        while(getline(ss, palavra, ' ')) {
 		    palavras.push_back(palavra);
-		    std::cout << palavra << '\n';
 	    }
     }
 }
