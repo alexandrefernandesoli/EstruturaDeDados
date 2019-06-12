@@ -1,7 +1,7 @@
-#include "file_pattern_search.hpp"
+#include "FilePatternSearch.hpp"
 
 int main(int argc, char *argv[]){
-	file_pattern_search *test = new file_pattern_search(argv[1]);
+	FilePatternSearch *test = new FilePatternSearch(argv[1]);
 
 	test->search();
 
