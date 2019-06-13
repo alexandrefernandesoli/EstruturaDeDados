@@ -103,7 +103,7 @@ FilePatternSearch::searchWord(ofstream& outputFile){
 
             if(openFile.is_open()){
                 while(getline(openFile, line)){
-                    if(line != ""){
+                    if(line != "" && (line.length() >= word.length())){
                         for_each(line.begin(), line.end(), [](char & c) {
                             c = ::tolower(c);
                         });
