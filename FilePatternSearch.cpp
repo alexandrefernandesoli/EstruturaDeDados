@@ -1,10 +1,9 @@
 #include "FilePatternSearch.hpp"
 
-
-/*
-    Abre o arquivo principal e lê cada uma de suas linhas.
-    Salvando os nomes dos arquivos de verificação no vector 'files' e passando o vector para o método 'saveOnMap'.
-    Passa o nome do arquivo de palavras para o método 'stringSplit'.
+/**
+ *  Abre o arquivo principal e lê cada uma de suas linhas.
+ *  Salvando os nomes dos arquivos de verificação no vector 'files' e passando o vector para o método 'saveOnMap'.
+ *  Passa o nome do arquivo de palavras para o método 'stringSplit'.
 */
 void
 FilePatternSearch::search(){
@@ -31,9 +30,9 @@ FilePatternSearch::search(){
     createOutputFile();
 }
 
-/*
-    Abre o arquivo wordsFile que contem uma linha com palavras, essa linha, sendo uma string, será
-    dividida em várias strings conforme seus espaços, essas strings serão guardadas no vector "wordsVector".
+/**
+ *  Abre o arquivo wordsFile que contem uma linha com palavras, essa linha, sendo uma string, será
+ *  dividida em várias strings conforme seus espaços, essas strings serão guardadas no vector "wordsVector".
 */
 void
 FilePatternSearch::stringSplit(string wordsFile){
@@ -51,10 +50,10 @@ FilePatternSearch::stringSplit(string wordsFile){
     }
 }
 
-/*
-    Tenta abrir cada um dos arquivos com seus respectivos nomes passados por parametro pelo vetor files,
-    os arquivos que são abertos com sucesso, são salvados em um map, com a key do tipo int sendo um indice que aumenta
-    conforme os arquivos são abertos com sucesso e seu value do tipo string sendo o nome do arquivo aberto com sucesso.
+/**
+ *  Tenta abrir cada um dos arquivos com seus respectivos nomes passados por parametro pelo vetor files,
+ * os arquivos que são abertos com sucesso, são salvados em um map, com a key do tipo int sendo um indice que aumenta
+ * conforme os arquivos são abertos com sucesso e seu value do tipo string sendo o nome do arquivo aberto com sucesso.
 */
 void
 FilePatternSearch::saveOnMap(vector<string> files){
@@ -68,8 +67,8 @@ FilePatternSearch::saveOnMap(vector<string> files){
     }
 }
 
-/*  
-    Cria o arquivo de saida conforme especificado: "nome do arquivo de entrada" + ".out".
+/**
+ * Cria o arquivo de saida conforme especificado: "nome do arquivo de entrada" + ".out".
 */
 void
 FilePatternSearch::createOutputFile(){
@@ -80,8 +79,9 @@ FilePatternSearch::createOutputFile(){
     }
 }
 
-/*
-
+/**
+ * Um laço para as palavra, com um laço para os arquivos dentro, com um laço para as linhas dos
+ * arquivos dentro, aplicando o KMP em cada linha do arquivo.
 */
 void
 FilePatternSearch::searchWord(ofstream& outputFile){
@@ -135,8 +135,9 @@ FilePatternSearch::searchWord(ofstream& outputFile){
     }
 }
 
-
-
+/**
+ * Acha vetor auxiliar do algoritmo KMP
+ */
 void
 FilePatternSearch::prefix(string pattern, int aux[]){
 	aux[0] = 0;
@@ -159,6 +160,10 @@ FilePatternSearch::prefix(string pattern, int aux[]){
 	}
 }
 
+
+/**
+ * KMP
+ */
 bool
 FilePatternSearch::kmp(string text, string pattern, int aux[]){
 	int idxText = 0, idxPattern = 0;
@@ -183,5 +188,3 @@ FilePatternSearch::kmp(string text, string pattern, int aux[]){
 	}
     return false;
 }
-
-

@@ -9,9 +9,9 @@ using namespace std;
 
 class FilePatternSearch{
 	private:
-		string entryFileName;
-		vector<string> wordsVector;
-		map<int, string> filesMap;
+		string entryFileName; /** Guarda o nome do arquivo principal de entrada */
+		vector<string> wordsVector; /** Guarda as palavras a serem testadas */
+		map<int, string> filesMap; /** Guarda os arquivos que serão testados */
 
 		void createOutputFile();
 		void saveOnMap(vector<string>);
